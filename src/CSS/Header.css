@@ -1,0 +1,76 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background: white;
+}
+
+.left-actions {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.super-s {
+    font-size: 10px;
+}
+
+.mid-actions {
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    height: 35px;
+    width: 300px;
+    border-radius: 17px 0 0 17px;
+    border: 0.1px solid lightgray;
+    padding: 5px 10px;
+}
+
+.searchButton {
+    height: 35px;
+    border-radius: 0 17px 17px 0;
+    border: 0.1px solid lightgray;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.right-actions {
+    display: flex;
+    align-items: center;
+}
+
+.signin-btn {
+    border-radius: 15px;
+    height: 35px;
+    width: 90px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: blue;
+    background: white;
+    border: 0.1px solid lightgray;
+    cursor: pointer;
+}
+
+.user-profile {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
