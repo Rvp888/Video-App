@@ -1,10 +1,12 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "../CSS/Header.css";
 import Icon from '@mdi/react';
-import { mdiMenu, mdiYoutube, mdiMagnify, mdiMicrophone, mdiDotsVertical,mdiAccountCircleOutline } from '@mdi/js';
+import { mdiMenu, mdiYoutube, mdiMagnify, mdiMicrophone, mdiDotsVertical, mdiAccountCircleOutline, mdiVideoPlusOutline, mdiBellOutline } from '@mdi/js';
 import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged } from "firebase/auth";
 import { app } from './../Firebase';
+import { navigationContext } from '../App';
+import { Link } from 'react-router-dom';
 
 
 const provider = new GoogleAuthProvider();
@@ -13,13 +15,14 @@ const auth = getAuth(app);
 
 
 export default function Header() {
-    const [user, setUser] = useState();
+    
+    const { changeLeftOpen, leftOpen, user, setUser } = useContext(navigationContext);
 
     useEffect(() => {
         // setUser( JSON.parse(localStorage.getItem("user")));
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user);
+        onAuthStateChanged(auth, (users) => {
+            if (users) {
+                setUser(users);
             }
         });
     },[])
@@ -38,10 +41,12 @@ export default function Header() {
     return (
         <div className='header'>
             <div className='left-actions'>
-                <Icon path={mdiMenu} size={1} style={{cursor: 'pointer'}} />
-                <div className='logo'>
-                    <Icon path={mdiYoutube} size={1} color="red" /><span>YouTube<sup className='super-s' >TM</sup></span>
-                </div>
+                <Icon path={mdiMenu} size={1} style={{cursor: 'pointer'}} onClick={() => changeLeftOpen(!leftOpen)} />
+                <Link to="/" style={{color: 'black', textDecoration: 'none'}}>
+                    <div className='logo'>
+                        <Icon path={mdiYoutube} size={1} color="red" /><span>YouTube<sup className='super-s' >TM</sup></span>
+                    </div>
+                </Link>
             </div>
 
             <div className='mid-actions'>
@@ -50,12 +55,18 @@ export default function Header() {
                 <Icon path={mdiMicrophone} size={1} style={{cursor: 'pointer'}} />
             </div>
 
-            <div className='right-actions'>
-                <Icon path={mdiDotsVertical} size={1} style={{cursor: 'pointer'}} />
-                {
-                    user ? <img src={user.photoURL} className="user-profile" /> : <button className='signin-btn' onClick={handleSignIn} ><Icon path={mdiAccountCircleOutline} size={1} color="blue" />Sign in</button>    
-                } 
-            </div>
+            {
+                user ? <div className='right-actions'>   
+                    <Link to="upload" style={{color: 'black'}}>
+                        <Icon path={mdiVideoPlusOutline} size={1} style={{cursor: 'pointer'}} /> 
+                    </Link>       
+                        <Icon path={mdiBellOutline} size={1} style={{cursor: 'pointer'}} />        
+                        <img src={user.photoURL} className="user-profile" />   
+                       </div> : <div className='right-actions'>
+                                    <Icon path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
+                                    <button className='signin-btn' onClick={handleSignIn} ><Icon path={mdiAccountCircleOutline} size={1} color="blue" />Sign in</button>
+                                </div>
+            }
         </div>
     )
 }
