@@ -1,10 +1,13 @@
 
+
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import React, { useContext, useEffect, useState } from 'react';
 import {v4 as uuidv4} from 'uuid';
 import { navigationContext } from '../App';
 import "../CSS/UploadVideo.css";
-import { storage } from '../Firebase';
+import { database, storage } from '../Firebase';
+import { addDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 export default function UploadVideo() {
     const { changeLeftOpen, user } = useContext(navigationContext);
@@ -13,21 +16,30 @@ export default function UploadVideo() {
         displayName: '',
         description: '',
         videoURL: '',
+        createdAt: null,
+        views: 0,
         thumbnailPhoto: '',
         likes: 0,
         comments: [],
         channelName: null,
         channelPhoto: null,
-    })
+    });
+    const [videoUploaded, setVideoUploaded] = useState(true);
+    const navigate = useNavigate();
+    const [thumbnailUploaded, setThumbnailUploaded] = useState(true);
 
     useEffect(() => {
         changeLeftOpen(false);
     }, []);
 
-    function submitVideo() {
+    async function submitVideo() {
         let tempPayload = {...videoDetails};
         tempPayload.channelName = user.displayName;
         tempPayload.channelPhoto = user.photoURL;
+        tempPayload.createdAt = new Date();
+        const response = await addDoc(database.videos, tempPayload);
+        navigate('/', {replace: true});
+        console.log(response);    
     }
 
     function handleFileChange(e, type) {
@@ -47,6 +59,8 @@ export default function UploadVideo() {
                     console.log('File available at', downloadURL);
                     type === 'video' ? videoDetails.videoURL = downloadURL : videoDetails.thumbnailPhoto = downloadURL;
                     setVideoDetails(videoDetails);
+                    setVideoUploaded(false);
+                    setThumbnailUploaded(false);
                 });
             }
         );
@@ -64,7 +78,7 @@ export default function UploadVideo() {
                 <input type="text" placeholder='Enter Video Title' onBlur={(e) => setVideoDetails({...videoDetails, displayName: e.target.value})} />
                 <h4 className='action-label'>Enter video description</h4>
                 <textarea placeholder='Enter Video description...' onBlur={(e) => setVideoDetails({...videoDetails, description: e.target.value})} ></textarea>
-                <button className='upload-action' onClick={submitVideo} >Upload</button>
+                <button className='upload-action' disabled={videoUploaded && thumbnailUploaded} onClick={submitVideo} >Upload</button>
             </div>
         </div>
     )
