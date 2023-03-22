@@ -75,3 +75,29 @@
     justify-content: space-between;
 }
 
+.new-comment-input-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-comment-input {
+    border: none;
+    border-bottom: 2px solid black;
+    width: 80%;
+}
+
+.new-comment-input:focus {
+    outline: none;
+}
+
+.new-comment-action-btn-cancel, .new-comment-action-btn-comment {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.new-comment-action-btn-comment {
+    color: white;
+    background: blue;
+}

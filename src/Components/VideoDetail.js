@@ -15,7 +15,6 @@ export default function VideoDetail() {
 
     useEffect(() => {
         changeLeftOpen(false);
-        console.log(params.id);
         const tempVideo = videos.find((ele) => ele.id === params.id);
         setVideo(tempVideo);
         // videoRef.current.play();
@@ -49,18 +48,16 @@ export default function VideoDetail() {
                         <div>{video?.description}</div>
                     </div>
                     <div className='comments'>
-                        <div>{video?.comments.length} Comments</div>
+                        <div>{video?.comments?.length} Comments</div>
                         <div className='new-comment'>
-                            <div className='channel-image'>
-                                <div>
-                                    <img src={user?.photoURL} alt={user?.displayName} className='channel-image' />
-                                    <input type='text' placeholder='Add a Comment ...' onChange={(e) => setComment(e.target.value)} />
-                                </div>
-                                <div style={{display: `${comment === '' ? 'none' : 'flex'}`}}>
-                                    <button>Cancel</button>
-                                    <button>Comment</button>
-                                </div>
-                            </div>
+                            <div className='new-comment-input-cont'>
+                                <img src={user?.photoURL} alt={user?.displayName} className='channel-image' />
+                                <input className='new-comment-input' type='text' placeholder='Add a Comment ...' onChange={(e) => setComment(e.target.value)} />
+                            </div>    
+                            <div style={{display: `${comment === '' ? 'none' : 'flex'}`, justifyContent: 'end'}}>
+                                <button className='new-comment-action-btn-cancel'>Cancel</button>
+                                <button className='new-comment-action-btn-comment'>Comment</button>
+                            </div>  
                         </div>
                     </div>
                 </div>
