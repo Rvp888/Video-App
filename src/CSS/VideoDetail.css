@@ -63,3 +63,15 @@
 .share-btn {
     width: 100px;
 }
+
+.description {
+    padding: 10px;
+    background: #f2f2f2;
+    border-radius: 10px;
+    min-height: 80px;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+

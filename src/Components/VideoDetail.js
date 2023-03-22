@@ -7,9 +7,10 @@ import { Icon } from '@mdi/react';
 import { mdiShareOutline, mdiThumbUpOutline } from '@mdi/js';
 
 export default function VideoDetail() {
-    const { changeLeftOpen, videos, setVideos } = useContext(navigationContext);
+    const { changeLeftOpen, user, videos, setVideos } = useContext(navigationContext);
     const [video, setVideo] = useState({});
     const videoRef = useRef();
+    const [comment, setComment] = useState('')
     const params = useParams();
 
     useEffect(() => {
@@ -19,6 +20,12 @@ export default function VideoDetail() {
         setVideo(tempVideo);
         // videoRef.current.play();
     }, [])
+
+    function dateFormatter(data) {
+        const date = new Date(data);
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+    }
 
     return (
         <div>
@@ -35,6 +42,25 @@ export default function VideoDetail() {
                         <div className='channel-details-right'>
                             <button className='like-btn'><Icon path={mdiThumbUpOutline} size={1} />{video?.likes}</button>
                             <button className='share-btn'><Icon path={mdiShareOutline} size={1} />Share</button>
+                        </div>
+                    </div>
+                    <div className='description'>
+                        <div>{video?.views} Views  {dateFormatter(video?.createdAt?.toDate())}</div>
+                        <div>{video?.description}</div>
+                    </div>
+                    <div className='comments'>
+                        <div>{video?.comments.length} Comments</div>
+                        <div className='new-comment'>
+                            <div className='channel-image'>
+                                <div>
+                                    <img src={user?.photoURL} alt={user?.displayName} className='channel-image' />
+                                    <input type='text' placeholder='Add a Comment ...' onChange={(e) => setComment(e.target.value)} />
+                                </div>
+                                <div style={{display: `${comment === '' ? 'none' : 'flex'}`}}>
+                                    <button>Cancel</button>
+                                    <button>Comment</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
