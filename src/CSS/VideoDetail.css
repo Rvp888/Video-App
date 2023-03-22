@@ -34,6 +34,7 @@
     border-radius: 15px;
     padding: 10px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .channel-details-left {
@@ -56,4 +57,9 @@
     align-items: center;
     justify-content: space-between;
     width: 60px;
+    cursor: pointer;
+}
+
+.share-btn {
+    width: 100px;
 }
