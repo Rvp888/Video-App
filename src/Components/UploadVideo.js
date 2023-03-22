@@ -24,9 +24,9 @@ export default function UploadVideo() {
         channelName: null,
         channelPhoto: null,
     });
-    const [videoUploaded, setVideoUploaded] = useState(true);
-    const navigate = useNavigate();
+    const [videoUploaded, setVideoUploaded] = useState(true);    
     const [thumbnailUploaded, setThumbnailUploaded] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         changeLeftOpen(false);
@@ -38,7 +38,9 @@ export default function UploadVideo() {
         tempPayload.channelPhoto = user.photoURL;
         tempPayload.createdAt = new Date();
         const response = await addDoc(database.videos, tempPayload);
-        navigate('/', {replace: true});
+        setTimeout(() => {
+            navigate('/', {replace: true});
+        },1000);        
         console.log(response);    
     }
 

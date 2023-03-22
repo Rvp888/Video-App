@@ -40,6 +40,7 @@ export default function Header() {
 
     return (
         <div className='header'>
+
             <div className='left-actions'>
                 <Icon path={mdiMenu} size={1} style={{cursor: 'pointer'}} onClick={() => changeLeftOpen(!leftOpen)} />
                 <Link to="/" style={{color: 'black', textDecoration: 'none'}}>
@@ -50,23 +51,25 @@ export default function Header() {
             </div>
 
             <div className='mid-actions'>
-                <input type="text" placeholder='Search' className='searchInput' />
+                <input type="search" placeholder='Search' className='searchInput' />
                 <button className='searchButton'><Icon path={mdiMagnify} size={1} /></button>
                 <Icon path={mdiMicrophone} size={1} style={{cursor: 'pointer'}} />
             </div>
 
             {
-                user ? <div className='right-actions'>   
-                    <Link to="upload" style={{color: 'black'}}>
-                        <Icon path={mdiVideoPlusOutline} size={1} style={{cursor: 'pointer'}} /> 
-                    </Link>       
-                        <Icon path={mdiBellOutline} size={1} style={{cursor: 'pointer'}} />        
-                        <img src={user.photoURL} className="user-profile" />   
-                       </div> : <div className='right-actions'>
-                                    <Icon path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
-                                    <button className='signin-btn' onClick={handleSignIn} ><Icon path={mdiAccountCircleOutline} size={1} color="blue" />Sign in</button>
-                                </div>
+                user ?  <div className='right-actions'>   
+                            <Link to="upload" style={{color: 'black'}}>
+                                <Icon path={mdiVideoPlusOutline} size={1} style={{cursor: 'pointer'}} /> 
+                            </Link>       
+                            <Icon path={mdiBellOutline} size={1} style={{cursor: 'pointer'}} />        
+                            <img src={user.photoURL} className="user-profile" />   
+                        </div> : 
+                        <div className='right-actions'>
+                            <Icon path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
+                            <button className='signin-btn' onClick={handleSignIn} ><Icon path={mdiAccountCircleOutline} size={1} color="blue" />Sign in</button>
+                        </div>
             }
+
         </div>
     )
 }

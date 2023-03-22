@@ -1,5 +1,42 @@
 
 .video-player {
-    height: 300px;
-    width: 800px;
+    height: 500px;
+    width: 1100px;
+
+}
+
+.video-detail-left {
+    margin: 10px 10px 0 10px;
+}
+
+.video-details-cont {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.channel-image {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.subscribe {
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.channel-details-left {
+    display: flex;
+    align-items: center;
 }
