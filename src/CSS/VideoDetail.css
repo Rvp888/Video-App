@@ -40,3 +40,20 @@
     display: flex;
     align-items: center;
 }
+
+.channel-details-right {
+    display: flex;
+    align-items: center;
+}
+
+.like-btn, .share-btn {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+}
