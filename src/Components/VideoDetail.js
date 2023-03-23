@@ -5,8 +5,9 @@ import { navigationContext } from '../App';
 import "../CSS/VideoDetail.css";
 import { Icon } from '@mdi/react';
 import { mdiShareOutline, mdiThumbUpOutline } from '@mdi/js';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, updateDoc } from 'firebase/firestore';
 import { fireStore } from '../Firebase';
+
 
 export default function VideoDetail() {
     const { changeLeftOpen, user, videos, setVideos } = useContext(navigationContext);
@@ -31,7 +32,10 @@ export default function VideoDetail() {
     }
 
     function handleLike() {
-        
+        const tempDoc = doc(fireStore, 'videos', video?.videoId);
+        updateDoc(tempDoc, {
+            likes: [...video?.likes, user?.id]
+        })
     }
 
     return (
