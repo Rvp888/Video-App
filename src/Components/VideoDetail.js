@@ -48,6 +48,24 @@ export default function VideoDetail() {
         })
     }
 
+    function handleComment() {
+        const tempDoc = doc(fireStore, "videos", video.videoId.toString());
+        const payLoad = {
+            userName: user.displayName,
+            useProfile: user.photoURL,
+            commentTime: new Date(),
+            commentText: comment,
+        }
+        updateDoc(tempDoc, {
+            comments: [...video.comments, payLoad],
+        }).then((res) => {
+            console.log(res);
+            setComment("");
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+
     return (
         <div style={{display: 'flex'}}>
             <div className='video-detail-left'>
@@ -74,11 +92,11 @@ export default function VideoDetail() {
                         <div className='new-comment'>
                             <div className='new-comment-input-cont'>
                                 <img src={user?.photoURL} alt={user?.displayName} className='channel-image' />
-                                <input className='new-comment-input' type='text' placeholder='Add a Comment ...' onChange={(e) => setComment(e.target.value)} />
+                                <input className='new-comment-input' type='text' value={comment} placeholder='Add a Comment ...' onChange={(e) => setComment(e.target.value)} />
                             </div>    
                             <div style={{display: `${comment === '' ? 'none' : 'flex'}`, justifyContent: 'end'}}>
-                                <button className='new-comment-action-btn-cancel'>Cancel</button>
-                                <button className='new-comment-action-btn-comment'>Comment</button>
+                                <button className='new-comment-action-btn-cancel' onClick={() => setComment("")}>Cancel</button>
+                                <button className='new-comment-action-btn-comment' onClick={handleComment}>Comment</button>
                             </div>  
                         </div>
                     </div>
