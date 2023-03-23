@@ -41,26 +41,26 @@ export default function VideoDetail() {
     return (
         <div>
             <div className='video-detail-left'>
-                <video src={video?.videoURL} ref={videoRef} autoPlay={true} className="video-player" controls></video>
+                <video src={video?.data?.videoURL} ref={videoRef} autoPlay={true} className="video-player" controls></video>
                 <div className='video-details-cont'>
-                    <h3>{video?.displayName}</h3>
+                    <h3>{video?.data?.displayName}</h3>
                     <div className='channel-details'>
                         <div className='channel-details-left'>
-                            <img className='channel-image' src={video?.channelPhoto} alt={video?.channelName} />
-                            <div>{video?.channelName}</div>
+                            <img className='channel-image' src={video?.data?.channelPhoto} alt={video?.data?.channelName} />
+                            <div>{video?.data?.channelName}</div>
                             <button className='subscribe'>Subscribe</button>
                         </div>
                         <div className='channel-details-right'>
-                            <button className='like-btn' onClick={handleLike}><Icon path={mdiThumbUpOutline} size={1} />{video?.likes?.length}</button>
+                            <button className='like-btn' onClick={handleLike}><Icon path={mdiThumbUpOutline} size={1} />{video?.data?.likes?.length}</button>
                             <button className='share-btn'><Icon path={mdiShareOutline} size={1} />Share</button>
                         </div>
                     </div>
                     <div className='description'>
-                        <div>{video?.views} Views  {dateFormatter(video?.createdAt?.toDate())}</div>
-                        <div>{video?.description}</div>
+                        <div>{video?.data?.views} Views  {dateFormatter(video?.data?.createdAt?.toDate())}</div>
+                        <div>{video?.data?.description}</div>
                     </div>
                     <div className='comments'>
-                        <div>{video?.comments?.length} Comments</div>
+                        <div>{video?.data?.comments?.length} Comments</div>
                         <div className='new-comment'>
                             <div className='new-comment-input-cont'>
                                 <img src={user?.photoURL} alt={user?.displayName} className='channel-image' />
