@@ -23,7 +23,7 @@ function App() {
     getDocs(database.videos).then((res) => {
       let dataArr = [...res.docs];        
       dataArr = dataArr.map((ele) => {
-        return {...ele, data:ele.data()};
+        return {...ele.data(), videoId: ele.id};
       });
       setVideos(dataArr);
     })

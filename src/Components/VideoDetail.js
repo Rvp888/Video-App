@@ -5,7 +5,7 @@ import { navigationContext } from '../App';
 import "../CSS/VideoDetail.css";
 import { Icon } from '@mdi/react';
 import { mdiShareOutline, mdiThumbUpOutline } from '@mdi/js';
-import { doc, setDoc, updateDoc } from 'firebase/firestore';
+import { doc, Firestore, setDoc, updateDoc } from 'firebase/firestore';
 import { fireStore } from '../Firebase';
 
 
@@ -19,11 +19,11 @@ export default function VideoDetail() {
     useEffect(() => {       
         const tempVideo = videos.find((ele) => ele.id === params.id);
         setVideo(tempVideo);
-    }, [])
+    });
 
     useEffect(() => {
         changeLeftOpen(false);
-    },[])
+    },[]);
 
     function dateFormatter(data) {
         const date = new Date(data);
@@ -32,35 +32,45 @@ export default function VideoDetail() {
     }
 
     function handleLike() {
-        const tempDoc = doc(fireStore, 'videos', video?.videoId);
+        const tempDoc = doc(fireStore, "videos", video.videoId.toString());
+        let tempArr = [...video.likes];
+        if (video.likes.includes(user.uid)) {
+            tempArr = tempArr.filter((ele) => ele !== user.uid);
+        } else {
+            tempArr = [...tempArr, user.uid];
+        }
         updateDoc(tempDoc, {
-            likes: [...video?.likes, user?.id]
+            likes: tempArr,
+        }).then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            console.log(err);
         })
     }
 
     return (
-        <div>
+        <div style={{display: 'flex'}}>
             <div className='video-detail-left'>
-                <video src={video?.data?.videoURL} ref={videoRef} autoPlay={true} className="video-player" controls></video>
+                <video src={video?.videoURL} ref={videoRef} autoPlay={true} className="video-player" controls></video>
                 <div className='video-details-cont'>
-                    <h3>{video?.data?.displayName}</h3>
+                    <h3>{video?.displayName}</h3>
                     <div className='channel-details'>
                         <div className='channel-details-left'>
-                            <img className='channel-image' src={video?.data?.channelPhoto} alt={video?.data?.channelName} />
-                            <div>{video?.data?.channelName}</div>
+                            <img className='channel-image' src={video?.channelPhoto} alt={video?.channelName} />
+                            <div>{video?.channelName}</div>
                             <button className='subscribe'>Subscribe</button>
                         </div>
                         <div className='channel-details-right'>
-                            <button className='like-btn' onClick={handleLike}><Icon path={mdiThumbUpOutline} size={1} />{video?.data?.likes?.length}</button>
+                            <button className='like-btn' onClick={handleLike}><Icon path={mdiThumbUpOutline} size={1} />{video?.likes?.length}</button>
                             <button className='share-btn'><Icon path={mdiShareOutline} size={1} />Share</button>
                         </div>
                     </div>
                     <div className='description'>
-                        <div>{video?.data?.views} Views  {dateFormatter(video?.data?.createdAt?.toDate())}</div>
-                        <div>{video?.data?.description}</div>
+                        <div>{video?.views} Views  {dateFormatter(video?.createdAt?.toDate())}</div>
+                        <div>{video?.description}</div>
                     </div>
                     <div className='comments'>
-                        <div>{video?.data?.comments?.length} Comments</div>
+                        <div>{video?.comments?.length} Comments</div>
                         <div className='new-comment'>
                             <div className='new-comment-input-cont'>
                                 <img src={user?.photoURL} alt={user?.displayName} className='channel-image' />
