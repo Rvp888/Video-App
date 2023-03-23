@@ -5,6 +5,8 @@ import { navigationContext } from '../App';
 import "../CSS/VideoDetail.css";
 import { Icon } from '@mdi/react';
 import { mdiShareOutline, mdiThumbUpOutline } from '@mdi/js';
+import { doc, setDoc } from 'firebase/firestore';
+import { fireStore } from '../Firebase';
 
 export default function VideoDetail() {
     const { changeLeftOpen, user, videos, setVideos } = useContext(navigationContext);
@@ -13,17 +15,23 @@ export default function VideoDetail() {
     const [comment, setComment] = useState('')
     const params = useParams();
 
-    useEffect(() => {
-        changeLeftOpen(false);
+    useEffect(() => {       
         const tempVideo = videos.find((ele) => ele.id === params.id);
         setVideo(tempVideo);
-        // videoRef.current.play();
     }, [])
+
+    useEffect(() => {
+        changeLeftOpen(false);
+    },[])
 
     function dateFormatter(data) {
         const date = new Date(data);
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+    }
+
+    function handleLike() {
+        
     }
 
     return (
@@ -39,7 +47,7 @@ export default function VideoDetail() {
                             <button className='subscribe'>Subscribe</button>
                         </div>
                         <div className='channel-details-right'>
-                            <button className='like-btn'><Icon path={mdiThumbUpOutline} size={1} />{video?.likes}</button>
+                            <button className='like-btn' onClick={handleLike}><Icon path={mdiThumbUpOutline} size={1} />{video?.likes?.length}</button>
                             <button className='share-btn'><Icon path={mdiShareOutline} size={1} />Share</button>
                         </div>
                     </div>

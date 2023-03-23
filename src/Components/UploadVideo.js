@@ -19,7 +19,7 @@ export default function UploadVideo() {
         createdAt: null,
         views: 0,
         thumbnailPhoto: '',
-        likes: 0,
+        likes: [],
         comments: [],
         channelName: null,
         channelPhoto: null,
