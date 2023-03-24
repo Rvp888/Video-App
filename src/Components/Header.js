@@ -71,7 +71,7 @@ export default function Header() {
                         </div>
             }
 
-            <div className='logout-btn'>Logout</div>
+            <div className='logout-btn' style={{display: userClicked ? 'block' : 'none'}}>Logout</div>
 
         </div>
     )
