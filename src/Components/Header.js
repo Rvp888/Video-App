@@ -40,7 +40,11 @@ export default function Header() {
     }
 
     function handleSignout() {
-        signOut(auth).then
+        signOut(auth).then(() => {
+            setUser({});
+        }).catch((err) => {
+            console.log(err);
+        })
     }
 
     return (
