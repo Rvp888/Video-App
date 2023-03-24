@@ -2,6 +2,7 @@
 .tags {
     display: flex;
     margin: 10px 15px;
+    overflow-x: scroll;
 }
 
 .single-tag {

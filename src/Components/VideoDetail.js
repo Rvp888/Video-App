@@ -7,6 +7,7 @@ import { Icon } from '@mdi/react';
 import { mdiShareOutline, mdiThumbUpOutline } from '@mdi/js';
 import { doc, Firestore, setDoc, updateDoc } from 'firebase/firestore';
 import { fireStore } from '../Firebase';
+import Main from './Main';
 
 
 export default function VideoDetail() {
@@ -121,7 +122,9 @@ export default function VideoDetail() {
                     </div>
                 </div>
             </div>
-            <div className='video-detail-right'></div>
+            <div className='video-detail-right'>
+                <Main origin='videoDetail' />
+            </div>
         </div>
     )
 }
