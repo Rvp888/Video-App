@@ -107,7 +107,9 @@ export default function VideoDetail() {
                             {
                                 video?.comments?.map((ele, index) => {
                                     return(
-                                        <div key={index}></div>
+                                        <div key={index}>
+                                            <img src={user?.userProfile} alt={ele?.userName} className="channel-image" />
+                                        </div>
                                     )
                                 })
                             }
