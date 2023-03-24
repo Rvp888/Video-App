@@ -103,6 +103,15 @@ export default function VideoDetail() {
                                 <button className='new-comment-action-btn-comment' onClick={handleComment}>Comment</button>
                             </div>  
                         </div>
+                        <div className='allComments'>
+                            {
+                                video?.comments?.map((ele, index) => {
+                                    return(
+                                        <div key={index}></div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
