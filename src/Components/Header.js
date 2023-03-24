@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import "../CSS/Header.css";
 import Icon from '@mdi/react';
 import { mdiMenu, mdiYoutube, mdiMagnify, mdiMicrophone, mdiDotsVertical, mdiAccountCircleOutline, mdiVideoPlusOutline, mdiBellOutline } from '@mdi/js';
-import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { app } from './../Firebase';
 import { navigationContext } from '../App';
 import { Link } from 'react-router-dom';
@@ -39,6 +39,10 @@ export default function Header() {
         })
     }
 
+    function handleSignout() {
+        signOut(auth).then
+    }
+
     return (
         <div className='header'>
 
@@ -63,7 +67,7 @@ export default function Header() {
                                 <Icon path={mdiVideoPlusOutline} size={1} style={{cursor: 'pointer'}} /> 
                             </Link>       
                             <Icon path={mdiBellOutline} size={1} style={{cursor: 'pointer'}} />        
-                            <img src={user.photoURL} className="user-profile" />   
+                            <img src={user.photoURL} onClick={() => setUserClicked(!userClicked)} className="user-profile" />   
                         </div> : 
                         <div className='right-actions'>
                             <Icon path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
@@ -71,7 +75,7 @@ export default function Header() {
                         </div>
             }
 
-            <div className='logout-btn' style={{display: userClicked ? 'block' : 'none'}}>Logout</div>
+            <div className='logout-btn' onClick={handleSignout} style={{display: userClicked ? 'block' : 'none'}}>Logout</div>
 
         </div>
     )
