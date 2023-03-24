@@ -108,9 +108,9 @@ export default function VideoDetail() {
                                 video?.comments?.map((ele, index) => {
                                     return(
                                         <div key={index}>
-                                            <img src={user?.userProfile} alt={ele?.userName} className="channel-image" />
+                                            <img src={user?.photoURL} alt={ele?.userName} className="channel-image" />
                                             <div>
-                                                <h6>{ele?.userName} {dateFormatter(ele?.commentTime)}</h6>
+                                                <h6>{ele?.userName} {dateFormatter(ele?.commentTime?.toDate())}</h6>
                                                 <div>{ele?.commentText}</div>
                                             </div>
                                         </div>
