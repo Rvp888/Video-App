@@ -48,6 +48,10 @@ export default function VideoDetail() {
         })
     }
 
+    function handleShare() {
+        navigator.clipboard.writeText(window.location.href);
+    }
+
     function handleComment() {
         const tempDoc = doc(fireStore, "videos", video.videoId.toString());
         const payLoad = {
@@ -80,7 +84,7 @@ export default function VideoDetail() {
                         </div>
                         <div className='channel-details-right'>
                             <button className='like-btn' onClick={handleLike}><Icon path={mdiThumbUpOutline} size={1} />{video?.likes?.length}</button>
-                            <button className='share-btn'><Icon path={mdiShareOutline} size={1} />Share</button>
+                            <button className='share-btn' onClick={handleShare}><Icon path={mdiShareOutline} size={1} />Share</button>
                         </div>
                     </div>
                     <div className='description'>
