@@ -17,6 +17,7 @@ const auth = getAuth(app);
 export default function Header() {
     
     const { changeLeftOpen, leftOpen, user, setUser } = useContext(navigationContext);
+    const [userClicked, setUserClicked] = useState(false);
 
     useEffect(() => {
         // setUser( JSON.parse(localStorage.getItem("user")));
@@ -69,6 +70,8 @@ export default function Header() {
                             <button className='signin-btn' onClick={handleSignIn} ><Icon path={mdiAccountCircleOutline} size={1} color="blue" />Sign in</button>
                         </div>
             }
+
+            <div className='logout-btn'>Logout</div>
 
         </div>
     )
