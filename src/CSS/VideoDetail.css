@@ -101,3 +101,23 @@
     color: white;
     background: blue;
 }
+
+.allComments {
+    margin-top: 30px;
+}
+
+.single-comment-cont {
+    display: flex;
+    font-size: 12px;
+}
+
+.comment-channel-image {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+
+.comment-user-creds {
+    margin-left: 10px;
+    font-weight: 700;
+}
