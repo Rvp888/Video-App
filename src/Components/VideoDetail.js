@@ -109,6 +109,10 @@ export default function VideoDetail() {
                                     return(
                                         <div key={index}>
                                             <img src={user?.userProfile} alt={ele?.userName} className="channel-image" />
+                                            <div>
+                                                <h6>{ele?.userName} {dateFormatter(ele?.commentTime)}</h6>
+                                                <div>{ele?.commentText}</div>
+                                            </div>
                                         </div>
                                     )
                                 })
