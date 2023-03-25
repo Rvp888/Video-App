@@ -6,7 +6,7 @@ import { mdiMenu, mdiYoutube, mdiMagnify, mdiMicrophone, mdiDotsVertical, mdiAcc
 import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { app, database } from './../Firebase';
 import { navigationContext } from '../App';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { query, getDocs, addDoc, where } from 'firebase/firestore';
 
 
@@ -16,7 +16,7 @@ const auth = getAuth(app);
 
 
 export default function Header() {
-    
+    const navigate = useNavigate();
     const { changeLeftOpen, leftOpen, user, setUser, searchFunction } = useContext(navigationContext);
     const [userClicked, setUserClicked] = useState(false);
     const [searchText, setSearchText] = useState("");
@@ -62,6 +62,7 @@ export default function Header() {
 
     function handleSearch() {
         searchFunction(searchText);
+        navigate(`/search`, {replace: true});
     }
 
     return (
