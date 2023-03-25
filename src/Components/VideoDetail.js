@@ -79,9 +79,10 @@ export default function VideoDetail() {
     }
 
     async function handleSubscribe() {
+        console.log('user.uid', user.uid);
         const q = query(database.users, where("userId", "==", user.uid));
         const snapshot = await getDocs(q);
-        const tempDoc = doc(fireStore, "users", snapshot.doc[0].id);
+        const tempDoc = doc(fireStore, "users", snapshot.docs[0].id);
         let tempArr = [...snapshot.docs[0].data().subscribedChannels];
         if (tempArr.includes(video.channelId)) {
             tempArr = tempArr.filter((ele) => ele !== video.channelId);

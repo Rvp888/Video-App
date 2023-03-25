@@ -53,7 +53,7 @@ export default function Header() {
 
     function handleSignout() {
         signOut(auth).then(() => {
-            setUser({});
+            setUser(null);
         }).catch((err) => {
             console.log(err);
         })
