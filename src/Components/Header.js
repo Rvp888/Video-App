@@ -4,9 +4,10 @@ import "../CSS/Header.css";
 import Icon from '@mdi/react';
 import { mdiMenu, mdiYoutube, mdiMagnify, mdiMicrophone, mdiDotsVertical, mdiAccountCircleOutline, mdiVideoPlusOutline, mdiBellOutline } from '@mdi/js';
 import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
-import { app } from './../Firebase';
+import { app, database } from './../Firebase';
 import { navigationContext } from '../App';
 import { Link } from 'react-router-dom';
+import { query, getDocs, addDoc } from 'firebase/firestore';
 
 
 const provider = new GoogleAuthProvider();
@@ -29,14 +30,18 @@ export default function Header() {
     },[])
 
     function handleSignIn() {
-        signInWithPopup(auth, provider).then((res) => {
-            console.log("Sign In Successfull !", res.user);
-            const payLoad = {
-                userName: res.user.displayName,
-                userId: res.user.uid,
-                userProfile: res.user.photoURL,
-                userEmail: res.user.email,
-                subscribedChannels: [],
+        signInWithPopup(auth, provider).then(async(res) => {
+            const q = query(database.users, where("userId", "==", res.user.uid));
+            const snapshot = await getDocs(q);
+            if(snapshot.docs.length === 0){
+                const payload = {
+                    userName: res.user.displayName,
+                    userId: res.user.uid,
+                    userProfile: res.user.photoURL,
+                    userEmail: res.user.email,
+                    subscribedChannels: [],
+                }
+                const res1 = await addDoc(database.users, payload);
             }
             // localStorage.setItem("user", JSON.stringify(result.user));
             setUser({...res.user});

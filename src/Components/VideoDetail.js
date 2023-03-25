@@ -5,8 +5,8 @@ import { navigationContext } from '../App';
 import "../CSS/VideoDetail.css";
 import { Icon } from '@mdi/react';
 import { mdiShareOutline, mdiThumbUpOutline } from '@mdi/js';
-import { doc, Firestore, setDoc, updateDoc } from 'firebase/firestore';
-import { fireStore } from '../Firebase';
+import { doc, Firestore, setDoc, updateDoc, query, getDocs, where } from 'firebase/firestore';
+import { database, fireStore } from '../Firebase';
 import Main from './Main';
 
 
@@ -16,10 +16,17 @@ export default function VideoDetail() {
     const videoRef = useRef();
     const [comment, setComment] = useState('')
     const params = useParams();
+    const [isSubscribed, setIsSubscribed] = useState(false);
 
     useEffect(() => {       
         const tempVideo = videos.find((ele) => ele.id === params.id);
         setVideo(tempVideo);
+        const q = query(database.users, where("userId", "==", user.uid));
+        const snapshot = getDocs(q).then((res) => {
+            const data = [...res.docs];
+            const firstData = data[0].data().subscribedChannels;
+            firstData.includes(video?.id) ? setIsSubscribed(true) : setIsSubscribed(false);
+        });
     });
 
     useEffect(() => {
@@ -71,6 +78,26 @@ export default function VideoDetail() {
         })
     }
 
+    async function handleSubscribe() {
+        const q = query(database.users, where("userId", "==", user.uid));
+        const snapshot = await getDocs(q);
+        const tempDoc = doc(fireStore, "users", snapshot.doc[0].id);
+        let tempArr = [...snapshot.docs[0].data().subscribedChannels];
+        if (tempArr.includes(video.id)) {
+            tempArr = tempArr.filter((ele) => ele !== video.id);
+        } else {
+            tempArr = [...tempArr, video.id];
+        }
+        updateDoc(tempDoc, {
+            subscribedChannels: tempArr,
+        }).then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+
+
     return (
         <div style={{display: 'flex'}}>
             <div className='video-detail-left'>
@@ -81,7 +108,7 @@ export default function VideoDetail() {
                         <div className='channel-details-left'>
                             <img className='channel-image' src={video?.channelPhoto} alt={video?.channelName} />
                             <div>{video?.channelName}</div>
-                            <button className='subscribe'>Subscribe</button>
+                            <button className='subscribe' onClick={handleSubscribe}>{isSubscribed ? 'Subscribed' : 'Subscribe'}</button>
                         </div>
                         <div className='channel-details-right'>
                             <button className='like-btn' onClick={handleLike}><Icon path={mdiThumbUpOutline} size={1} />{video?.likes?.length}</button>
