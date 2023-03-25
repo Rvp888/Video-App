@@ -78,7 +78,7 @@ export default function Header() {
             </div>
 
             <div className='mid-actions'>
-                <input type="search" placeholder='Search' className='searchInput' value={searchText} onChange={() => {setSearchText(e.target.value)}} />
+                <input type="search" placeholder='Search' className='searchInput' value={searchText} onChange={(e) => {setSearchText(e.target.value)}} />
                 <button className='searchButton' onClick={handleSearch} ><Icon path={mdiMagnify} size={1} /></button>
                 <Icon path={mdiMicrophone} size={1} style={{cursor: 'pointer'}} />
             </div>
