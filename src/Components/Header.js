@@ -7,7 +7,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signO
 import { app, database } from './../Firebase';
 import { navigationContext } from '../App';
 import { Link } from 'react-router-dom';
-import { query, getDocs, addDoc } from 'firebase/firestore';
+import { query, getDocs, addDoc, where } from 'firebase/firestore';
 
 
 const provider = new GoogleAuthProvider();

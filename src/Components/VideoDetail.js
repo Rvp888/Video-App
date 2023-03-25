@@ -21,7 +21,7 @@ export default function VideoDetail() {
     useEffect(() => {       
         const tempVideo = videos.find((ele) => ele.id === params.id);
         setVideo(tempVideo);
-        const q = query(database.users, where("userId", "==", user.uid));
+        const q = query(database.users, where("userId", "==", user?.uid || ""));
         const snapshot = getDocs(q).then((res) => {
             const data = [...res.docs];
             const firstData = data[0].data().subscribedChannels;
