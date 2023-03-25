@@ -14,7 +14,7 @@ import { fireStore } from '../Firebase';
 export default function SearchPage(props) {
   const navigate = useNavigate();
 
-  const { changeLeftOpen, searchedVideos } = useContext(navigationContext);
+  const { changeLeftOpen, searchedVideos, searchedChannels } = useContext(navigationContext);
 
   useEffect(() => {
     changeLeftOpen(true);
@@ -56,6 +56,26 @@ export default function SearchPage(props) {
                 }
             </div>
             <h1>Channels</h1>
+            <div className={props.origin === 'videoDetail' ? '' : 'videos'}>
+                {
+                    searchedChannels.map((ele) => {
+                        return (
+                            <div key={ele.id} className="single-video" onClick={() => handleClick(ele.id, ele)}>
+                                <img className='thumbnail-image' src={ele.thumbnailPhoto} alt={ele.displayName} />
+                                <div className='video-details'>
+                                    <img className='channel-image' src={ele.channelPhoto} alt={ele.channelName} />
+                                    <h3 className='video-name'>{ele.displayName}</h3>
+                                    <Icon path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
+                                </div>
+                                <div className='channel-details'>
+                                    <p>{ele.channelName}</p>
+                                    <div>{ele.views} views . {ele.time}</div>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

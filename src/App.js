@@ -49,7 +49,7 @@ function App() {
   function searchFunction(text) {
     const filterVideos = videos.filter((ele) => ele.displayName.includes(text));
     setSearchedVideos(filterVideos);
-    const filterUsers = users.filter((ele) => ele.displayName.includes(text));
+    const filterUsers = users.filter((ele) => ele.userName.includes(text));
     setSearchedChannels(filterUsers);
   }
 
@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <navigationContext.Provider value={{ leftOpen, changeLeftOpen, user, setUser, videos, setVideos, searchFunction, searchedVideos }}>
+        <navigationContext.Provider value={{ leftOpen, changeLeftOpen, user, setUser, videos, setVideos, searchFunction, searchedVideos, searchedChannels }}>
           <Header />
           <div style={{ display: 'flex' }}>
             {
