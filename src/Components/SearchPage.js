@@ -11,7 +11,7 @@ import { fireStore } from '../Firebase';
 
 
 
-export default function Main(props) {
+export default function SearchPage(props) {
   const navigate = useNavigate();
 
   const { changeLeftOpen, searchedVideos } = useContext(navigationContext);

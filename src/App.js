@@ -10,6 +10,7 @@ import UploadVideo from './Components/UploadVideo';
 import VideoDetail from './Components/VideoDetail';
 import { getDocs } from 'firebase/firestore';
 import { database } from './Firebase';
+import SearchPage from './Components/SearchPage';
 
 
 const navigationContext = createContext();
@@ -63,6 +64,7 @@ function App() {
               <Route path="/" element={<Main />}></Route>
               <Route path="/upload" element={<UploadVideo />}></Route>
               <Route path="/video/:id" element={<VideoDetail/>}></Route>
+              <Route path="/search" element={<SearchPage/>}></Route>
             </Routes>
           </div>
         </navigationContext.Provider>
