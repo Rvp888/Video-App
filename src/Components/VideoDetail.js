@@ -1,11 +1,11 @@
 
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { memo ,useContext, useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router';
 import { navigationContext } from '../App';
 import "../CSS/VideoDetail.css";
 import { Icon } from '@mdi/react';
 import { mdiShareOutline, mdiThumbUpOutline } from '@mdi/js';
-import { doc, Firestore, setDoc, updateDoc, query, getDocs, where } from 'firebase/firestore';
+import { doc, updateDoc, query, getDocs, where } from 'firebase/firestore';
 import { database, fireStore } from '../Firebase';
 import Main from './Main';
 
@@ -19,7 +19,7 @@ export default function VideoDetail() {
     const [isSubscribed, setIsSubscribed] = useState(false);
 
     useEffect(() => {       
-        const tempVideo = videos.find((ele) => ele.id === params.id);
+        const tempVideo = videos.find((ele) => ele.id == params.id);
         setVideo(tempVideo);
         const q = query(database.users, where("userId", "==", user?.uid || ""));
         const snapshot = getDocs(q).then((res) => {

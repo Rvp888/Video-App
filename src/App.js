@@ -16,17 +16,27 @@ const navigationContext = createContext();
 
 function App() {
   const [leftOpen, setLeftOpen] = useState(true);
-  const [user, setUser] = useState();
+  const [users, setUsers] = useState([]);
   const [videos, setVideos] = useState([]);
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
-    getDocs(database.videos).then((res) => {
-      let dataArr = [...res.docs];        
-      dataArr = dataArr.map((ele) => {
-        return {...ele.data(), videoId: ele.id};
+    setInterval(() => {
+      getDocs(database.videos).then((res) => {
+        let dataArr = [...res.docs];
+        dataArr = dataArr.map((ele) => {
+          return { ...ele.data(), videoId: ele.id };
+        });
+        setVideos(dataArr);
+      })
+      getDocs(database.users).then((res) => {
+        let dataarr = [...res.docs]
+        dataarr = dataarr.map((ele) => {
+          return { ...ele.data() };
+        });
+        setUsers(dataarr);
       });
-      setVideos(dataArr);
-    })
+    }, 1000);
   }, []);
 
   function changeLeftOpen(val) {

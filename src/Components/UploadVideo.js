@@ -39,7 +39,7 @@ export default function UploadVideo() {
         tempPayload.channelPhoto = user.photoURL;
         tempPayload.createdAt = new Date();
         tempPayload.channelId = user.uid;
-        const response = await addDoc(database.videos, tempPayload);
+        const res = await addDoc(database.videos, tempPayload);
         setTimeout(() => {
             navigate('/', {replace: true});
         },1000);        
