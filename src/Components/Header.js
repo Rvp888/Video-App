@@ -17,7 +17,7 @@ const auth = getAuth(app);
 
 export default function Header() {
     
-    const { changeLeftOpen, leftOpen, user, setUser, searchFunction, searchedVideos } = useContext(navigationContext);
+    const { changeLeftOpen, leftOpen, user, setUser, searchFunction } = useContext(navigationContext);
     const [userClicked, setUserClicked] = useState(false);
     const [searchText, setSearchText] = useState("");
 
