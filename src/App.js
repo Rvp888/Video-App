@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <navigationContext.Provider value={{ leftOpen, changeLeftOpen, user, setUser, videos, setVideos }}>
+        <navigationContext.Provider value={{ leftOpen, changeLeftOpen, user, setUser, videos, setVideos, searchFunction, searchedVideos }}>
           <Header />
           <div style={{ display: 'flex' }}>
             {
