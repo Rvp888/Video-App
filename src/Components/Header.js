@@ -19,6 +19,7 @@ export default function Header() {
     
     const { changeLeftOpen, leftOpen, user, setUser } = useContext(navigationContext);
     const [userClicked, setUserClicked] = useState(false);
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         // setUser( JSON.parse(localStorage.getItem("user")));
@@ -59,6 +60,10 @@ export default function Header() {
         })
     }
 
+    function handleSearch() {
+        
+    }
+
     return (
         <div className='header'>
 
@@ -72,8 +77,8 @@ export default function Header() {
             </div>
 
             <div className='mid-actions'>
-                <input type="search" placeholder='Search' className='searchInput' />
-                <button className='searchButton'><Icon path={mdiMagnify} size={1} /></button>
+                <input type="search" placeholder='Search' className='searchInput' value={searchText} onChange={() => {setSearchText(e.target.value)}} />
+                <button className='searchButton' onClick={handleSearch} ><Icon path={mdiMagnify} size={1} /></button>
                 <Icon path={mdiMicrophone} size={1} style={{cursor: 'pointer'}} />
             </div>
 
