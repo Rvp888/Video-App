@@ -47,9 +47,9 @@ function App() {
   }
 
   function searchFunction(text) {
-    const filterVideos = videos.filter((ele) => ele.displayName.includes(text));
+    const filterVideos = videos.filter((ele) => ele.displayName.toLowerCase().includes(text.toLowerCase()));
     setSearchedVideos(filterVideos);
-    const filterUsers = users.filter((ele) => ele.userName.includes(text));
+    const filterUsers = users.filter((ele) => ele.userName.toLowerCase().includes(text.toLowerCase()));
     setSearchedChannels(filterUsers);
   }
 
