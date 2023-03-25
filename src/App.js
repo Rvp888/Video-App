@@ -19,6 +19,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [videos, setVideos] = useState([]);
   const [user, setUser] = useState([]);
+  const [searchedVideos, setSearchedVideos] = useState([]);
 
   useEffect(() => {
     setInterval(() => {
@@ -42,6 +43,12 @@ function App() {
   function changeLeftOpen(val) {
     setLeftOpen(val);
   }
+
+  function searchFunction(text) {
+    const filterVideos = videos.filter((ele) => ele.displayName.includes(text));
+    setSearchedVideos(filterVideos);
+  }
+
 
   return (
     <div className="App">
