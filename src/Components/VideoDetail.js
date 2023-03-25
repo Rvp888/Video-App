@@ -25,7 +25,7 @@ export default function VideoDetail() {
         const snapshot = getDocs(q).then((res) => {
             const data = [...res.docs];
             const firstData = data[0].data().subscribedChannels;
-            firstData.includes(video?.id) ? setIsSubscribed(true) : setIsSubscribed(false);
+            firstData.includes(video?.channelId) ? setIsSubscribed(true) : setIsSubscribed(false);
         });
     });
 
@@ -62,14 +62,14 @@ export default function VideoDetail() {
 
     function handleComment() {
         const tempDoc = doc(fireStore, "videos", video.videoId.toString());
-        const payLoad = {
+        const payload = {
             userName: user.displayName,
             useProfile: user.photoURL,
             commentTime: new Date(),
             commentText: comment,
         }
         updateDoc(tempDoc, {
-            comments: [...video.comments, payLoad],
+            comments: [...video.comments, payload],
         }).then((res) => {
             console.log(res);
             setComment("");
@@ -83,10 +83,10 @@ export default function VideoDetail() {
         const snapshot = await getDocs(q);
         const tempDoc = doc(fireStore, "users", snapshot.doc[0].id);
         let tempArr = [...snapshot.docs[0].data().subscribedChannels];
-        if (tempArr.includes(video.id)) {
-            tempArr = tempArr.filter((ele) => ele !== video.id);
+        if (tempArr.includes(video.channelId)) {
+            tempArr = tempArr.filter((ele) => ele !== video.channelId);
         } else {
-            tempArr = [...tempArr, video.id];
+            tempArr = [...tempArr, video.channelId];
         }
         updateDoc(tempDoc, {
             subscribedChannels: tempArr,

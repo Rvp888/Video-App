@@ -13,8 +13,8 @@ export default function UploadVideo() {
     const { changeLeftOpen, user } = useContext(navigationContext);
     const [videoDetails, setVideoDetails] = useState({
         id: uuidv4(),
-        displayName: '',
-        description: '',
+        displayName: null,
+        description: null,
         videoURL: '',
         createdAt: null,
         views: 0,
@@ -23,6 +23,7 @@ export default function UploadVideo() {
         comments: [],
         channelName: null,
         channelPhoto: null,
+        channelId: null,
     });
     const [videoUploaded, setVideoUploaded] = useState(true);    
     const [thumbnailUploaded, setThumbnailUploaded] = useState(true);
@@ -37,11 +38,11 @@ export default function UploadVideo() {
         tempPayload.channelName = user.displayName;
         tempPayload.channelPhoto = user.photoURL;
         tempPayload.createdAt = new Date();
+        tempPayload.channelId = user.uid;
         const response = await addDoc(database.videos, tempPayload);
         setTimeout(() => {
             navigate('/', {replace: true});
         },1000);        
-        console.log(response);    
     }
 
     function handleFileChange(e, type) {
