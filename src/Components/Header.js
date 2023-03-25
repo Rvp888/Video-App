@@ -29,10 +29,17 @@ export default function Header() {
     },[])
 
     function handleSignIn() {
-        signInWithPopup(auth, provider).then((result) => {
-            console.log("Sign In Successfull !", result.user);
+        signInWithPopup(auth, provider).then((res) => {
+            console.log("Sign In Successfull !", res.user);
+            const payLoad = {
+                userName: res.user.displayName,
+                userId: res.user.uid,
+                userProfile: res.user.photoURL,
+                userEmail: res.user.email,
+                subscribedChannels: [],
+            }
             // localStorage.setItem("user", JSON.stringify(result.user));
-            setUser({...result.user});
+            setUser({...res.user});
         })
         .catch((err) => {
             console.log("Sign In Failed !");
