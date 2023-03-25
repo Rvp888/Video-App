@@ -21,6 +21,7 @@ function App() {
   const [videos, setVideos] = useState([]);
   const [user, setUser] = useState([]);
   const [searchedVideos, setSearchedVideos] = useState([]);
+  const [searchedChannels, setSearchedChannels] = useState([]);
 
   useEffect(() => {
     setInterval(() => {
@@ -48,6 +49,8 @@ function App() {
   function searchFunction(text) {
     const filterVideos = videos.filter((ele) => ele.displayName.includes(text));
     setSearchedVideos(filterVideos);
+    const filterUsers = users.filter((ele) => ele.displayName.includes(text));
+    setSearchedChannels(filterUsers);
   }
 
 
