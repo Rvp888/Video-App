@@ -42,6 +42,35 @@ export default function Main(props) {
       name: 'Dramedy',
       selected: false,
     },
+    {
+      name: 'React routers',
+      selected: false,
+    },
+    {
+      name: 'News',
+      selected: false,
+    },
+    {
+      name: 'Awards',
+      selected: false,
+    },
+    {
+      name: 'Comedy',
+      selected: false,
+    },
+    {
+      name: 'T-Series',
+      selected: false,
+    },
+    {
+      name: 'Cricket',
+      selected: false,
+    },
+    {
+      name: 'Stock Market',
+      selected: false,
+    },
+    
   ]);
 
   const { changeLeftOpen, videos, setVideos } = useContext(navigationContext);
