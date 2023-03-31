@@ -3,7 +3,10 @@
     width: 16%;
     height: calc(100vh - 60px);
     overflow-y: scroll;
-    background-color: #d0cece;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .left-sidebar::-webkit-scrollbar {
@@ -19,4 +22,13 @@
 
 .left-sidebar::-webkit-scrollbar-thumb:hover {
     background-color: rgb(156, 155, 155);
+}
+
+.left-sidebar div {
+    width: 90%;
+    background-color: #d0cece;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
 }
