@@ -45,7 +45,8 @@
     width: 500px;
     border-radius: 20px 0 0 20px;
     border: 0.1px solid lightgray;
-    padding: 5px 10px;
+    padding: 5px 20px;
+    font-size: 15px;
 }
 
 .searchButton {
@@ -53,15 +54,19 @@
     height: 40px;
     border-radius: 0 20px 20px 0;
     border: 0.1px solid lightgray;
-    padding: 5px 10px;
+    padding: 7px 10px;
     cursor: pointer;
+    color: rgb(50, 49, 49);
+    font-weight: 100;
+    margin-right: 20px;
 }
 
 .right-actions {
     display: flex;
     align-items: center;
-    width: 100px;
+    width: 130px;
     justify-content: space-between;
+    margin-right: 15px;
 }
 
 .signin-btn {
