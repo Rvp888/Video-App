@@ -17,6 +17,13 @@
     align-items: center;
 }
 
+.icon-hover:hover  {
+    cursor: pointer;
+    padding: 6px;
+    background-color: #ddd9d9;
+    border-radius: 50%;
+}
+
 .logo {
     display: flex;
     align-items: center;
