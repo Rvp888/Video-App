@@ -17,9 +17,12 @@
     align-items: center;
 }
 
-.icon-hover:hover  {
+.header-icon {
     cursor: pointer;
     padding: 6px;
+}
+
+.header-icon:hover  { 
     background-color: #ddd9d9;
     border-radius: 50%;
 }
