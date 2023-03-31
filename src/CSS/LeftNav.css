@@ -1,5 +1,22 @@
 
 .left-sidebar {
     width: 16%;
-    background-color: #a2a1a1;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    background-color: #d0cece;
+}
+
+.left-sidebar::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.left-sidebar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 30px;
+    border: 3.5px solid transparent;
+    background-clip: content-box;
+}
+
+.left-sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(156, 155, 155);
 }

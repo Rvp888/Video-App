@@ -33,7 +33,7 @@
 }
 
 .single-video {
-    width: 380px;
+    width: 360px;
     height: 310px;
     display: flex;
     flex-direction: column;
@@ -45,7 +45,7 @@
 .thumbnail-image {
     width: 100%;
     height: 65%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .video-details {
