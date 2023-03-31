@@ -71,7 +71,7 @@ export default function Header() {
             <div className='left-actions'>
                 <Icon path={mdiMenu} size={1} style={{cursor: 'pointer'}} onClick={() => changeLeftOpen(!leftOpen)} />
                 <Link to="/" style={{color: 'black', textDecoration: 'none'}}>
-                    <div className='logo'>
+                    <div className='logo' title='YouTube Home' >
                         <Icon path={mdiYoutube} size={1.5} color="red" /><span className='app-name'>YouTube<sup className='super-s' >TM</sup></span>
                     </div>
                 </Link>
@@ -79,16 +79,16 @@ export default function Header() {
 
             <div className='mid-actions'>
                 <input type="search" placeholder='Search' className='searchInput' value={searchText} onChange={(e) => {setSearchText(e.target.value)}} />
-                <button className='searchButton' onClick={handleSearch} ><Icon path={mdiMagnify} size={1} /></button>
-                <Icon path={mdiMicrophone} size={1} style={{cursor: 'pointer'}} />
+                <button className='searchButton' onClick={handleSearch} title='Search' ><Icon path={mdiMagnify} size={1} /></button>
+                <Icon path={mdiMicrophone} size={1} style={{cursor: 'pointer'}} title='Search with your voice' />
             </div>
 
             {
                 user ?  <div className='right-actions'>   
-                            <Link to="upload" style={{color: 'black'}}>
+                            <Link to="upload" style={{color: 'black'}} title='Create' >
                                 <Icon path={mdiVideoPlusOutline} size={1} style={{cursor: 'pointer'}} /> 
                             </Link>       
-                            <Icon path={mdiBellOutline} size={1} style={{cursor: 'pointer'}} />        
+                            <Icon path={mdiBellOutline} size={1} style={{cursor: 'pointer'}} title='Notifications' />        
                             <img src={user.photoURL} onClick={() => setUserClicked(!userClicked)} className="user-profile" />   
                         </div> : 
                         <div className='right-actions'>
