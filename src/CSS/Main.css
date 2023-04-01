@@ -75,8 +75,22 @@
 }
 
 .video-name {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.channel-name {
+    margin-top: 0px;
+    margin-bottom: -10px;
+    color: #615f5f;
+    font-weight: 500;
+}
+
+.views-time {
+    font-size: 14px;
+    font-weight: 500;
+    color: #615f5f;
 }
 
 .three-dots {
