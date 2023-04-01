@@ -55,8 +55,23 @@
 }
 
 .bottom-para {
+    margin-left: -5px;
+    margin-top: -10px;
     align-self: flex-start;
-    width: 80%;
-    font-size: 15px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.bottom-para:hover {
+    background-color: rgb(202, 16, 16);
+}
+
+.bottom-para p {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(114, 114, 114);
+    margin-bottom: -10px;
 }
