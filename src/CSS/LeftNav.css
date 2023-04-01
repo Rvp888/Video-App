@@ -26,13 +26,30 @@
 
 .left-sidebar div {
     width: 90%;
-    background-color: #d0cece;
+    background-color: transparent;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.left-sidebar div:hover {
+    background-color: #eeecec;
 }
 
 .leftSidebar-icon {
     margin-right: 20px;
+}
+
+.left-sidebar hr {
+    width: 95%;
+    margin: 10px 0px;
+}
+
+.left-sidebar-heading {
+    font-size: 18px;
+    align-self: flex-start;
+    margin: 5px 0;
+    margin-left: 20px;
 }

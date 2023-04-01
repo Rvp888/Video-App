@@ -14,9 +14,7 @@ export default function LeftNav() {
       <div><Icon path={mdiPlayBoxMultipleOutline} size={1} className='leftSidebar-icon' />Library</div>
       <div><Icon path={mdiHistory} size={1} className='leftSidebar-icon' />History</div>
       <hr></hr>
-      <div>Sign in to like videos, comment, and subscribe.<button className='signin-btn' ><Icon path={mdiAccountCircleOutline} size={1} color="blue" />Sign in</button></div>
-      <hr></hr> 
-      <h1>Explore</h1>
+      <p className='left-sidebar-heading' >Explore</p>
       <div><Icon path={mdiFire} size={1} className='leftSidebar-icon' />Trending</div>
       <div><Icon path={mdiShoppingOutline} size={1} className='leftSidebar-icon' />Shopping</div>
       <div><Icon path={mdiMusicNoteOutline} size={1} className='leftSidebar-icon' />Music</div>
