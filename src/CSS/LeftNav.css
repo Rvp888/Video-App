@@ -80,3 +80,12 @@
 .bottom-para span {
     margin-right: 5px;
 }
+
+.copy-right {
+    align-self: flex-start;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+}

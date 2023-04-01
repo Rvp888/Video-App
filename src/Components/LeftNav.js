@@ -1,5 +1,5 @@
 
-import { mdiAccessPoint, mdiAccountCircleOutline, mdiAlert, mdiCarSettings, mdiClock, mdiClockAlertOutline, mdiClockOutline, mdiCogOutline, mdiFaceWomanShimmerOutline, mdiFire, mdiFlagOutline, mdiHelpCircleOutline, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMessageAlertOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiPlayBoxOutline, mdiPlayCircle, mdiPlusCircleOutline, mdiShoppingOutline, mdiStarSettingsOutline, mdiTeddyBear, mdiThumbUpOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutube, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
+import { mdiAccessPoint, mdiAccountCircleOutline, mdiAlert, mdiCarSettings, mdiClock, mdiClockAlertOutline, mdiClockOutline, mdiCogOutline, mdiCopyright, mdiFaceWomanShimmerOutline, mdiFire, mdiFlagOutline, mdiHelpCircleOutline, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMessageAlertOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiPlayBoxOutline, mdiPlayCircle, mdiPlusCircleOutline, mdiShoppingOutline, mdiStarSettingsOutline, mdiTeddyBear, mdiThumbUpOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutube, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
 import Icon from '@mdi/react';
 import React from 'react';
 import "../CSS/LeftNav.css";
@@ -51,6 +51,9 @@ export default function LeftNav() {
         <p><span>Terms</span> <span>Privacy</span> <span>Policy & Safety</span></p>
         <p><span>How YouTube works</span></p>
         <p><span>Test new features</span></p>
+      </div>
+      <div className='copy-right'>
+        <Icon path={mdiCopyright} size={1} /> 2023 Google LLC
       </div>
     </div>
   )
