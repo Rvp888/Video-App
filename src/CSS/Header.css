@@ -20,11 +20,12 @@
 .header-icon {
     cursor: pointer;
     padding: 6px;
+    border-radius: 50%;
 }
 
 .header-icon:hover  { 
-    background-color: #ddd9d9;
-    border-radius: 50%;
+    background-color: #ddd9d9;    
+    transition: background-color, 1s;
 }
 
 .logo {
@@ -67,8 +68,14 @@
     padding: 7px 10px;
     cursor: pointer;
     color: rgb(50, 49, 49);
+    background-color: #eeecec;
     font-weight: 100;
     margin-right: 20px;
+}
+
+.searchButton:hover {
+    background-color: #dedbdb;
+    transition: background-color, 1s;
 }
 
 .right-actions {
