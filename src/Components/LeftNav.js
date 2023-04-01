@@ -47,6 +47,11 @@ export default function LeftNav() {
         <p><span>Contact us</span> <span>Creators</span></p>
         <p><span>Advertise</span> <span>Developers</span></p>
       </div>
+      <div className='bottom-para'>
+        <p><span>Terms</span> <span>Privacy</span> <span>Policy & Safety</span></p>
+        <p><span>How YouTube works</span></p>
+        <p><span>Test new features</span></p>
+      </div>
     </div>
   )
 }

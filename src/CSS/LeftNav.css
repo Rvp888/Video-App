@@ -54,9 +54,10 @@
     margin-left: 20px;
 }
 
-.bottom-para {
-    margin-left: -5px;
+.left-sidebar .bottom-para {
+    margin-left: 20px;
     margin-top: -10px;
+    margin-bottom: 20px;
     align-self: flex-start;
     padding: 0;
     display: flex;
@@ -64,14 +65,18 @@
     align-items: flex-start;
 }
 
-.bottom-para:hover {
-    background-color: rgb(202, 16, 16);
+.left-sidebar .bottom-para:hover {
+    background-color: transparent;
 }
 
 .bottom-para p {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 400;
-    color: rgb(114, 114, 114);
-    margin-bottom: -10px;
+    color: rgb(85, 84, 84);
+    margin-bottom: -12px;
+}
+
+.bottom-para span {
+    margin-right: 5px;
 }
