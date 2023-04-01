@@ -52,9 +52,9 @@ export default function LeftNav() {
         <p><span>How YouTube works</span></p>
         <p><span>Test new features</span></p>
       </div>
-      <div className='copy-right'>
-        <Icon path={mdiCopyright} size={1} /> 2023 Google LLC
-      </div>
+      <p className='copy-right'>
+        <Icon path={mdiCopyright} size={0.5} />  2023 Google LLC
+      </p>
     </div>
   )
 }
