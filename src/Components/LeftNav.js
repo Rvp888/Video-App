@@ -1,5 +1,5 @@
 
-import { mdiAccessPoint, mdiAccountCircleOutline, mdiAlert, mdiClock, mdiClockAlertOutline, mdiClockOutline, mdiFaceWomanShimmerOutline, mdiFire, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiPlayBoxOutline, mdiPlayCircle, mdiPlusCircleOutline, mdiShoppingOutline, mdiTeddyBear, mdiThumbUpOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutube, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
+import { mdiAccessPoint, mdiAccountCircleOutline, mdiAlert, mdiCarSettings, mdiClock, mdiClockAlertOutline, mdiClockOutline, mdiCogOutline, mdiFaceWomanShimmerOutline, mdiFire, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiPlayBoxOutline, mdiPlayCircle, mdiPlusCircleOutline, mdiShoppingOutline, mdiStarSettingsOutline, mdiTeddyBear, mdiThumbUpOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutube, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
 import Icon from '@mdi/react';
 import React from 'react';
 import "../CSS/LeftNav.css";
@@ -36,6 +36,12 @@ export default function LeftNav() {
       <div><Icon path={mdiYoutubeStudio} size={1} className='leftSidebar-icon' color='red' />YouTube Studio</div>
       <div><Icon path={mdiPlayCircle} size={1} className='leftSidebar-icon' color='red' />YouTube Music</div>
       <div><Icon path={mdiTeddyBear} size={1} className='leftSidebar-icon' color='red' />YouTube Kids</div>
+      <hr></hr>
+      <div><Icon path={mdiCogOutline} size={1} className='leftSidebar-icon' />Settings</div>
+      <div><Icon path={mdiTrophyOutline} size={1} className='leftSidebar-icon' />Report history</div>
+      <div><Icon path={mdiLightbulbOutline} size={1} className='leftSidebar-icon' />Help</div>
+      <div><Icon path={mdiFaceWomanShimmerOutline} size={1} className='leftSidebar-icon' />Send feedback</div>
+      <hr></hr>
     </div>
   )
 }
