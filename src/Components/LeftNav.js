@@ -1,5 +1,5 @@
 
-import { mdiAccessPoint, mdiAccountCircleOutline, mdiFaceWomanShimmerOutline, mdiFire, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiShoppingOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
+import { mdiAccessPoint, mdiAccountCircleOutline, mdiAlert, mdiClock, mdiClockAlertOutline, mdiClockOutline, mdiFaceWomanShimmerOutline, mdiFire, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiPlayBoxOutline, mdiPlayCircle, mdiPlusCircleOutline, mdiShoppingOutline, mdiTeddyBear, mdiThumbUpOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutube, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
 import Icon from '@mdi/react';
 import React from 'react';
 import "../CSS/LeftNav.css";
@@ -13,6 +13,9 @@ export default function LeftNav() {
       <hr></hr>
       <div><Icon path={mdiPlayBoxMultipleOutline} size={1} className='leftSidebar-icon' />Library</div>
       <div><Icon path={mdiHistory} size={1} className='leftSidebar-icon' />History</div>
+      <div><Icon path={mdiPlayBoxOutline} size={1} className='leftSidebar-icon' />Your videos</div>
+      <div><Icon path={mdiClockOutline} size={1} className='leftSidebar-icon' />Watch later</div>
+      <div><Icon path={mdiThumbUpOutline} size={1} className='leftSidebar-icon' />Liked videos</div>
       <hr></hr>
       <p className='left-sidebar-heading' >Explore</p>
       <div><Icon path={mdiFire} size={1} className='leftSidebar-icon' />Trending</div>
@@ -26,7 +29,13 @@ export default function LeftNav() {
       <div><Icon path={mdiLightbulbOutline} size={1} className='leftSidebar-icon' />Learning</div>
       <div><Icon path={mdiFaceWomanShimmerOutline} size={1} className='leftSidebar-icon' />Fashion & Beauty</div>
       <hr></hr>
-      <div>Browse channels</div>
+      <div><Icon path={mdiPlusCircleOutline} size={1} className='leftSidebar-icon' />Browse channels</div>
+      <hr></hr>
+      <p className='left-sidebar-heading' >More from YouTube</p>
+      <div><Icon path={mdiYoutube} size={1} className='leftSidebar-icon' color='red' />YouTube Premium</div>
+      <div><Icon path={mdiYoutubeStudio} size={1} className='leftSidebar-icon' color='red' />YouTube Studio</div>
+      <div><Icon path={mdiPlayCircle} size={1} className='leftSidebar-icon' color='red' />YouTube Music</div>
+      <div><Icon path={mdiTeddyBear} size={1} className='leftSidebar-icon' color='red' />YouTube Kids</div>
     </div>
   )
 }
