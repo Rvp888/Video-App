@@ -7,7 +7,7 @@ import "../CSS/LeftNav.css";
 export default function LeftNav() {
   return (
     <div className='left-sidebar'>
-      <div><Icon path={mdiHome} size={1}/>Home</div>
+      <div><Icon path={mdiHome} size={1} className='leftSidebar-icon' />Home</div>
       <div><Icon path={mdiVideoOutline} size={1} />Shorts</div>
       <div><Icon path={mdiYoutubeSubscription} size={1} />Subscriptions</div>
       <hr></hr>

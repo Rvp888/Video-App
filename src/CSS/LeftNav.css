@@ -28,7 +28,11 @@
     width: 90%;
     background-color: #d0cece;
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px 10px;
     display: flex;
     align-items: center;
+}
+
+.leftSidebar-icon {
+    margin-right: 20px;
 }
