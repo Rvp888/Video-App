@@ -53,3 +53,10 @@
     margin: 5px 0;
     margin-left: 20px;
 }
+
+.bottom-para {
+    align-self: flex-start;
+    width: 80%;
+    font-size: 15px;
+
+}

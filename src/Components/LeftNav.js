@@ -42,6 +42,7 @@ export default function LeftNav() {
       <div><Icon path={mdiHelpCircleOutline} size={1} className='leftSidebar-icon' />Help</div>
       <div><Icon path={mdiMessageAlertOutline} size={1} className='leftSidebar-icon' />Send feedback</div>
       <hr></hr>
+      <p className='bottom-para'>About  Press  Copyright Cotact us  Creators  Advertise  Developers</p>
     </div>
   )
 }
