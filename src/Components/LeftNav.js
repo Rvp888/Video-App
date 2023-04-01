@@ -1,5 +1,5 @@
 
-import { mdiAccessPoint, mdiAccountCircleOutline, mdiAlert, mdiCarSettings, mdiClock, mdiClockAlertOutline, mdiClockOutline, mdiCogOutline, mdiFaceWomanShimmerOutline, mdiFire, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiPlayBoxOutline, mdiPlayCircle, mdiPlusCircleOutline, mdiShoppingOutline, mdiStarSettingsOutline, mdiTeddyBear, mdiThumbUpOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutube, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
+import { mdiAccessPoint, mdiAccountCircleOutline, mdiAlert, mdiCarSettings, mdiClock, mdiClockAlertOutline, mdiClockOutline, mdiCogOutline, mdiFaceWomanShimmerOutline, mdiFire, mdiFlagOutline, mdiHelpCircleOutline, mdiHistory, mdiHome, mdiLightbulbOutline, mdiMessageAlertOutline, mdiMovieOpen, mdiMusicNoteOutline, mdiNewspaperVariantOutline, mdiPlayBoxMultipleOutline, mdiPlayBoxOutline, mdiPlayCircle, mdiPlusCircleOutline, mdiShoppingOutline, mdiStarSettingsOutline, mdiTeddyBear, mdiThumbUpOutline, mdiTrophyOutline, mdiVideoOutline, mdiYoutube, mdiYoutubeGaming, mdiYoutubeStudio, mdiYoutubeSubscription } from '@mdi/js';
 import Icon from '@mdi/react';
 import React from 'react';
 import "../CSS/LeftNav.css";
@@ -38,9 +38,9 @@ export default function LeftNav() {
       <div><Icon path={mdiTeddyBear} size={1} className='leftSidebar-icon' color='red' />YouTube Kids</div>
       <hr></hr>
       <div><Icon path={mdiCogOutline} size={1} className='leftSidebar-icon' />Settings</div>
-      <div><Icon path={mdiTrophyOutline} size={1} className='leftSidebar-icon' />Report history</div>
-      <div><Icon path={mdiLightbulbOutline} size={1} className='leftSidebar-icon' />Help</div>
-      <div><Icon path={mdiFaceWomanShimmerOutline} size={1} className='leftSidebar-icon' />Send feedback</div>
+      <div><Icon path={mdiFlagOutline} size={1} className='leftSidebar-icon' />Report history</div>
+      <div><Icon path={mdiHelpCircleOutline} size={1} className='leftSidebar-icon' />Help</div>
+      <div><Icon path={mdiMessageAlertOutline} size={1} className='leftSidebar-icon' />Send feedback</div>
       <hr></hr>
     </div>
   )
