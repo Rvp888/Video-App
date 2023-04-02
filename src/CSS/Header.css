@@ -119,5 +119,6 @@
     background-color: blanchedalmond;
     padding: 10px;
     cursor: pointer;
+    z-index: 10;
 }
 

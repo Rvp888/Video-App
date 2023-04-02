@@ -22,7 +22,6 @@ export default function Header() {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        // setUser( JSON.parse(localStorage.getItem("user")));
         onAuthStateChanged(auth, (users) => {
             if (users) {
                 setUser(users);
@@ -44,7 +43,6 @@ export default function Header() {
                 }
                 const res1 = await addDoc(database.users, payload);
             }
-            // localStorage.setItem("user", JSON.stringify(result.user));
             setUser({...res.user});
         })
         .catch((err) => {
