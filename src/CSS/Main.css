@@ -118,15 +118,14 @@
 
 
 
-/* .channel-details {
-    margin-top: -10px;
-    color: rgb(107, 106, 106);
-    font-size: 13px;
-    font-weight: 500;
-    margin-left: 40px;
-    margin-top: -10px;
-}
 
-.channel-details div {
-    margin-top: -10px;
-} */
+
+.logout-btn {
+    position: fixed;
+    top: 50px;
+    right: 6px;
+    background-color: blanchedalmond;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
