@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 60px;
+    position: fixed;
 }
 
 .left-sidebar::-webkit-scrollbar {
@@ -79,7 +81,7 @@
 }
 
 .bottom-para span {
-    margin-right: 5px;
+    margin-right: 4px;
     cursor: pointer;
 }
 

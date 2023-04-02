@@ -117,7 +117,7 @@ export default function VideoDetail() {
                         </div>
                     </div>
                     <div className='description'>
-                        <div>{video?.views} Views  {dateFormatter(video?.createdAt?.toDate())}</div>
+                        <div>{video?.views} Views  {dateFormatter(video?.createdAt)}</div>
                         <div>{video?.description}</div>
                     </div>
                     <div className='comments'>

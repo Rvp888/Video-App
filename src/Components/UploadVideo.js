@@ -37,7 +37,7 @@ export default function UploadVideo() {
         let tempPayload = {...videoDetails};
         tempPayload.channelName = user.displayName;
         tempPayload.channelPhoto = user.photoURL;
-        tempPayload.createdAt = new Date().toString();
+        tempPayload.createdAt = new Date();
         tempPayload.channelId = user.uid;
         const res = await addDoc(database.videos, tempPayload);
         setTimeout(() => {

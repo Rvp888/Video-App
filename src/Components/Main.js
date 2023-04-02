@@ -92,7 +92,7 @@ export default function Main(props) {
   }
 
   return (
-    <div>
+    <div className='main'>
       <div className='tags' style={{ width: props.origin ? '350px' : '' }}>
         {
           tags.map((ele, index) => {
@@ -105,7 +105,7 @@ export default function Main(props) {
       <div className={props.origin === 'videoDetail' ? '' : 'videos'}>
         {
           videos.map((ele) => {
-            // console.log(ele.createdAt.toDate())
+            // ele.createdAt.toDate().toString().slice(0, 15)
             return (
               <div key={ele.id} className="single-video" onClick={() => handleClick(ele.id, ele)}>
                 <img className='thumbnail-image' src={ele.thumbnailPhoto} alt={ele.displayName} />
@@ -114,7 +114,7 @@ export default function Main(props) {
                   <div className='name-details'>
                     <h3 className='video-name'>{ele.displayName}</h3>
                     <p className='channel-name'>{ele.channelName}</p>
-                    <p className='views-time'>{ele.views} views . {ele.createdAt.toDate().toString().slice(0, 15)}</p>
+                    <p className='views-time'>{ele.views} views . {}</p>
                   </div>
                   <Icon className='three-dots' path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
                 </div>
