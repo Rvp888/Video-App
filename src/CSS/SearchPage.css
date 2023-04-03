@@ -1,4 +1,7 @@
 
+* {
+    box-sizing: border-box;
+}
 
 .main {
     margin-top: 60px;
@@ -120,12 +123,3 @@
 
 
 
-/* .logout-btn {
-    position: fixed;
-    top: 50px;
-    right: 6px;
-    background-color: blanchedalmond;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-} */
