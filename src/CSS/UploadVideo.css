@@ -28,7 +28,7 @@
     width: 50%;
     height: 40px;
     font-size: 17px;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: 5px;
     border: 1px solid rgb(169, 167, 167);
 }
@@ -46,11 +46,12 @@
 
 
 .upload-action {
+    font-size: 17px;
     margin: 10px 0px;
     border-radius: 5px;
     border: none;
     background-color: aqua;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
