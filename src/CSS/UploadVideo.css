@@ -4,7 +4,7 @@
 }
 
 .video-upload-title {
-    
+    margin: 10px;
 }
 
 .video-upload-cont {
@@ -17,9 +17,7 @@
     margin: 5px;
 }
 
-.video-upload-title {
-    margin: 10px;
-}
+
 
 .upload-action {
     margin: 10px 0px;
