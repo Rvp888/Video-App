@@ -70,7 +70,7 @@ export default function Header() {
                 <Icon path={mdiMenu} size={1.5} className='header-icon' onClick={() => changeLeftOpen(!leftOpen)} />
                 <Link to="/" style={{color: 'black', textDecoration: 'none'}}>
                     <div className='logo' title='YouTube Home' >
-                        <Icon path={mdiYoutube} size={1.5} color="red" /><span className='app-name'>YouTube<sup className='super-s' >TM</sup></span>
+                        <Icon path={mdiYoutube} size={1.5} color="red" /><span className='app-name'>VidTube<sup className='super-s' >TM</sup></span>
                     </div>
                 </Link>
             </div>

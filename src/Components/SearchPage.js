@@ -35,12 +35,12 @@ export default function SearchPage(props) {
     return (
         <div className='search-page'>
             { searchedVideos.length > 0 && <h1>Videos</h1> }
-            <div className={props.origin === 'videoDetail' ? '' : 'videos'}>
+            <div className={props.origin === 'videoDetail' ? '' : 'search-videos'}>
                 {
                     searchedVideos.map((ele) => {
                         return (
-                            <div key={ele.id} className="single-video" onClick={() => handleClick(ele.id, ele)}>
-                                <img className='thumbnail-image' src={ele.thumbnailPhoto} alt={ele.displayName} />
+                            <div key={ele.id} className="video-div" onClick={() => handleClick(ele.id, ele)}>
+                                <img className='thumbnail-img' src={ele.thumbnailPhoto} alt={ele.displayName} />
                                 <div className='video-details'>
                                     <img className='channel-image' src={ele.channelPhoto} alt={ele.channelName} />
                                     <div className='name-details'>
