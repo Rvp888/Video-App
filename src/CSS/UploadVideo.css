@@ -1,9 +1,9 @@
 
-.video-upload-cont {
+.video-upload-page {
     margin: 60px;
 }
 
-.video-upload {
+.video-upload-cont {
     display: flex;
     flex-direction: column;
     align-items: start;

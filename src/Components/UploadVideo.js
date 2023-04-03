@@ -70,9 +70,9 @@ export default function UploadVideo() {
     }
 
     return (
-        <div className='video-upload-cont'>
+        <div className='video-upload-page'>
             <h1 className='video-upload-title'>Upload Your Video</h1>
-            <div className='video-upload'>
+            <div className='video-upload-cont'>
                 <h4 className='action-label'>Select Video</h4>
                 <input type="file" accept='video/*' onChange={(e) => handleFileChange(e, 'video')} />
                 <h4 className='action-label'>Select Thumbnail Image</h4>

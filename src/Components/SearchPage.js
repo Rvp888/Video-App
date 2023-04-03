@@ -41,14 +41,14 @@ export default function SearchPage(props) {
                         return (
                             <div key={ele.id} className="video-div" onClick={() => handleClick(ele.id, ele)}>
                                 <img className='thumbnail-img' src={ele.thumbnailPhoto} alt={ele.displayName} />
-                                <div className='video-details'>
-                                    <img className='channel-image' src={ele.channelPhoto} alt={ele.channelName} />
-                                    <div className='name-details'>
-                                        <h3 className='video-name'>{ele.displayName}</h3>
-                                        <p className='channel-name'>{ele.channelName}</p>
-                                        <p className='views-time'>{ele.views} views . { }</p>
+                                <div className='search-video-details'>
+                                    <img className='vid-channel-img' src={ele.channelPhoto} alt={ele.channelName} />
+                                    <div className='nameNdetails'>
+                                        <h3 className='search-video-name'>{ele.displayName}</h3>
+                                        <p className='vid-channel-name'>{ele.channelName}</p>
+                                        <p className='viewsNtime'>{ele.views} views . { }</p>
                                     </div>
-                                    <Icon className='three-dots' path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
+                                    <Icon className='three-dots-icon' path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
                                 </div>
                             </div>
                         )
