@@ -8,42 +8,6 @@
     margin-left: 16%;
 }
 
-.tags {
-    width: 100%;
-    display: flex;
-    padding: 10px 20px;
-    overflow-x: scroll;
-    font-size: 15px;
-    font-weight: 500;    
-    position: fixed;
-    top: 60;
-    z-index: 1;
-    background-color: #fff;
-}
-
-.tags::-webkit-scrollbar {
-    display: none;
-} 
-
-.single-tag {
-    padding: 5px 10px 7px 10px;
-    border-radius: 5px;
-    background-color: #eeecec;
-    color: #2b2b2b;
-    margin: 0 6px;
-    cursor: pointer;
-}
-
-.single-tag:hover {
-    background-color: #dedbdb;
-    transition: background-color, 1s;
-}
-
-.selected-tag {
-    background-color: black ;
-    color: white;
-}
-
 .videos {
     display: grid;
     grid-template-columns: auto auto auto;

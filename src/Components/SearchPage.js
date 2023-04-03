@@ -5,7 +5,7 @@ import Icon from '@mdi/react';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { navigationContext } from '../App';
-import "../CSS/Main.css";
+import "../CSS/SearchPage.css";
 import { doc, updateDoc } from 'firebase/firestore';
 import { fireStore } from '../Firebase';
 
