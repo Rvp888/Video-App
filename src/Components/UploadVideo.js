@@ -74,16 +74,16 @@ export default function UploadVideo() {
             <h1 className='video-upload-title'>Upload Your Video</h1>
             <div className='video-upload-cont'>
                 <label className='action-label' htmlFor='Select Video' >Select Video</label>
-                <input type="file" accept='video/*' onChange={(e) => handleFileChange(e, 'video')} />
+                <input type="file" className='input-tag' accept='video/*' onChange={(e) => handleFileChange(e, 'video')} />
                 <br/>
                 <label className='action-label' htmlFor='Select Thumbnail Image' >Select Thumbnail Image</label>
-                <input type="file" accept='image/*' onChange={(e) => handleFileChange(e, 'thumbnail')} />
+                <input type="file" className='input-tag' accept='image/*' onChange={(e) => handleFileChange(e, 'thumbnail')} />
                 <br/>
                 <label className='action-label'>Enter video title</label>
-                <input type="text" placeholder='Enter Video Title' onBlur={(e) => setVideoDetails({...videoDetails, displayName: e.target.value})} />
+                <input type="text" className='input-tag' placeholder='Enter Video Title' onBlur={(e) => setVideoDetails({...videoDetails, displayName: e.target.value})} />
                 <br/>
                 <label className='action-label'>Enter video description</label>
-                <textarea placeholder='Enter Video description...' onBlur={(e) => setVideoDetails({...videoDetails, description: e.target.value})} ></textarea>
+                <textarea className='description-tag' placeholder='Enter Video description...' onBlur={(e) => setVideoDetails({...videoDetails, description: e.target.value})} ></textarea>
                 <br/>
                 <button className='upload-action' disabled={videoUploaded && thumbnailUploaded} onClick={submitVideo} >Upload</button>
             </div>
