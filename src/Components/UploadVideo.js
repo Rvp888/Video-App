@@ -79,7 +79,7 @@ export default function UploadVideo() {
                 <label className='action-label' htmlFor='Select Thumbnail Image' >Select Thumbnail Image</label>
                 <input type="file" className='input-tag' accept='image/*' onChange={(e) => handleFileChange(e, 'thumbnail')} />
                 <br/>
-                <label className='action-label'>Enter video title</label>
+                <label className='action-label'>Video Title</label>
                 <input type="text" className='input-tag' placeholder='Enter Video Title' onBlur={(e) => setVideoDetails({...videoDetails, displayName: e.target.value})} />
                 <br/>
                 <label className='action-label'>Enter video description</label>
