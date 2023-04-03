@@ -33,7 +33,7 @@ export default function SearchPage(props) {
   }
 
     return (
-        <div className='main'>
+        <div className='search-page'>
             { searchedVideos.length > 0 && <h1>Videos</h1> }
             <div className={props.origin === 'videoDetail' ? '' : 'videos'}>
                 {
