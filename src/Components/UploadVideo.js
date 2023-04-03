@@ -82,7 +82,7 @@ export default function UploadVideo() {
                 <label className='action-label'>Video Title</label>
                 <input type="text" className='input-tag' placeholder='Enter Video Title' onBlur={(e) => setVideoDetails({...videoDetails, displayName: e.target.value})} />
                 <br/>
-                <label className='action-label'>Enter video description</label>
+                <label className='action-label'>Video Description</label>
                 <textarea className='description-tag' placeholder='Enter Video description...' onBlur={(e) => setVideoDetails({...videoDetails, description: e.target.value})} ></textarea>
                 <br/>
                 <button className='upload-action' disabled={videoUploaded && thumbnailUploaded} onClick={submitVideo} >Upload</button>
