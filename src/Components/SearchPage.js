@@ -34,7 +34,7 @@ export default function SearchPage(props) {
 
     return (
         <div className='main'>
-            <h1>Videos</h1>
+            { searchedVideos.length > 0 && <h1>Videos</h1> }
             <div className={props.origin === 'videoDetail' ? '' : 'videos'}>
                 {
                     searchedVideos.map((ele) => {
@@ -55,7 +55,7 @@ export default function SearchPage(props) {
                     })
                 }
             </div>
-            <h1>Channels</h1>
+            { searchedChannels.length > 0 && <h1>Channels</h1> }
             <div className={props.origin === 'videoDetail' ? '' : 'videos'}>
                 {
                     searchedChannels.map((ele) => {
