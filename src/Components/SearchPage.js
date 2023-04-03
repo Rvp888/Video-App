@@ -33,7 +33,7 @@ export default function SearchPage(props) {
   }
 
     return (
-        <div>
+        <div className='main'>
             <h1>Videos</h1>
             <div className={props.origin === 'videoDetail' ? '' : 'videos'}>
                 {
@@ -43,12 +43,12 @@ export default function SearchPage(props) {
                                 <img className='thumbnail-image' src={ele.thumbnailPhoto} alt={ele.displayName} />
                                 <div className='video-details'>
                                     <img className='channel-image' src={ele.channelPhoto} alt={ele.channelName} />
-                                    <h3 className='video-name'>{ele.displayName}</h3>
-                                    <Icon path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
-                                </div>
-                                <div className='channel-details'>
-                                    <p>{ele.channelName}</p>
-                                    <div>{ele.views} views . {ele.time}</div>
+                                    <div className='name-details'>
+                                        <h3 className='video-name'>{ele.displayName}</h3>
+                                        <p className='channel-name'>{ele.channelName}</p>
+                                        <p className='views-time'>{ele.views} views . { }</p>
+                                    </div>
+                                    <Icon className='three-dots' path={mdiDotsVertical} size={1} style={{ cursor: 'pointer' }} />
                                 </div>
                             </div>
                         )
