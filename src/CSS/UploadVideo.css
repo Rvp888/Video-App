@@ -3,6 +3,10 @@
     margin: 60px;
 }
 
+.video-upload-title {
+    
+}
+
 .video-upload-cont {
     display: flex;
     flex-direction: column;
