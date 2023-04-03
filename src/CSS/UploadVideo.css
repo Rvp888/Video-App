@@ -26,16 +26,19 @@
 
 .input-tag {
     width: 50%;
+    height: 40px;
     font-size: 17px;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(169, 167, 167);
 }
 
 .description-tag {
     width: 50%;
     font-size: 17px;
     padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(169, 167, 167);
 }
 
 
